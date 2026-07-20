@@ -1,0 +1,24 @@
+{
+  "name": "mern-auth-system",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "express-rate-limit": "^8.6.0",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^9.0.3",
+    "twilio": "^6.0.2",
+    "validator": "^13.15.35"
+  }
+}
