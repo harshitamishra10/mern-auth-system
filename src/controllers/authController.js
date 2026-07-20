@@ -3,7 +3,7 @@ import User from "../models/User.js";
 import generateOTP from "../utils/generateOTP.js";
 import jwt from "jsonwebtoken";
 import { sendEmail } from "../utils/sendEmail.js";
-import { sendPhoneOTP } from "../utils/sendPhoneOTP.js";
+import { sendPhoneOTP } from "../utils/sendphoneOTP.js";
 import { verifyPhoneOTP } from "../utils/verifyPhoneOTP.js";
 import { generateAccessToken,generateRefreshToken,} from "../utils/generateToken.js";
 
