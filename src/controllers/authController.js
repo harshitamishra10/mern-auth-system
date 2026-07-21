@@ -169,8 +169,12 @@ export const verifyOTP = async (req, res) => {
         message: "Email and OTP are required",
       });
     }
+      const normalizedEmail = email.trim().toLowerCase();
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({
+      email: normalizedEmail,
+    });
+  
 
     if (!user) {
       return res.status(404).json({
@@ -185,12 +189,12 @@ export const verifyOTP = async (req, res) => {
       });
     }
 
-    if (user.otp !== otp) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid OTP",
-      });
-    }
+if (String(user.otp) !== String(otp)) {
+  return res.status(400).json({
+    success: false,
+    message: "Invalid OTP",
+  });
+}
 
     if (new Date() > user.otpExpiry) {
       return res.status(400).json({
